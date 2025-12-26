@@ -1,4 +1,5 @@
-export const revalidate = 60;  //ISR
+// export const revalidate = 0;  //ISR
+export const dynamic = "force-dynamic";
 
 async function getProduct() {
     const res = await fetch("http://localhost:3000/api/products");

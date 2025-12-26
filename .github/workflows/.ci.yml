@@ -1,0 +1,32 @@
+name: CI - Next.js
+
+on: 
+  pull_request:
+    branches: [ main, develop ]
+  push: 
+    branches: [ develop ]
+
+jobs: 
+  build:
+    runs-on: ubuntu-lates
+
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run build
+        run: npm run buil
+
+
+
+
+
+      

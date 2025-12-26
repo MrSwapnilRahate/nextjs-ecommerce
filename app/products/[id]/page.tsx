@@ -1,5 +1,6 @@
-// SSR used for dynamic, frequently changing data like price.
 export const dynamic = "force-dynamic";
+// SSR used for dynamic, frequently changing data like price.
+
 
 async function getProduct(id: string) {
     const res = await fetch(`https://localhost:3000/api/products/${id}`, {

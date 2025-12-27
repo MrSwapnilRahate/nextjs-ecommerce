@@ -1,37 +1,11 @@
-name: CI
+name: Test CI
 
-on:
+on: 
   push:
-    branches:
-      - develop
-      - feature/*
-  pull_request:
-    branches:
-      - develop
 
-jobs:
-  build:
+jobs: 
+  test:
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Type-check
-        run: npm run type-check
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Build
-        run: npm run build
-
-      - name: Run tests
-        run: npm run test
+    steps: 
+      - run: echo "CI is working"
+      

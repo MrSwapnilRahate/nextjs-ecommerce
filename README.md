@@ -238,14 +238,14 @@ Subtasks Created (SCRUM-9 → SCRUM-17)
 Examples:
   - Project base setup
   - Product listing UI
-  - Client-side search
+  - Client-side searchch
   - Category filter
   - Pagination (future)
   - Empty / loading states
 Each subtask:
   - Linked to parent story (SCRUM-5)
   - Own branch naming: feature/SCRUM-11-product-search
--------------------------------------------------------------------------------------------- addeed ----
+-----------------------------------------------------------------------------------------------------------------
 
 ## Development Workflow
 1) Pick Jira Subtask

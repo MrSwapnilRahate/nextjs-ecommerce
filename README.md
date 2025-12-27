@@ -1,5 +1,40 @@
+## Goal of This Project
+  - Simulate real production workflow
+  - Follow FAANG-style engineering practices
+  - Demonstrate:
+      - Next.js App Router
+      - Scalable frontend architecture
+      - CI/CD & deployment
+      - Jira + GitHub integration mindset
+
+## Future Enhancements
+  - Backend API integration
+  - Authentication
+  - Cart & checkout flow
+  - Performance optimization
+  - Testing (Jest / Playwright)
+  - Monitoring & analytics
+
+## SCALING STRATEGY (200 → 2K → 20K users)
+| Phase     | Focus                   |
+| --------- | ----------------------- |
+| 200 users | SSG, caching            |
+| 2k users  | ISR, pagination         |
+| 20k users | CDN, image optimization |
+
+## Tech Stack
+Framework: Next.js (App Router)
+Language: TypeScript
+State Management: Redux Toolkit
+Styling: CSS / UI Library (future scope)
+Version Control: Git + GitHub
+CI/CD: GitHub Actions
+Deployment: Vercel
+Project Management: Jira (Scrum)
+---------------------------------------------
+
+## Project Installation
 npx create-next-app@latest nextjs-ecommerce
-----------------------------------------------
 
 √ TypeScript - Yes
 √ ESLint
@@ -176,21 +211,6 @@ GitHub pe:
   Base: develop
   Compare: feature/product-listing
 ----------------------------------------------------------------
-✍️ PR Description Template (IMPORTANT)
-## What
-Implemented product listing page with SSG.
-
-## Why
-To enable scalable and SEO-friendly product browsing.
-
-## How
-- Used Next.js App Router
-- Static generation with revalidation
-- Reusable ProductCard component
-
-## Testing
-- Manual UI testing
-- Checked build and navigation
 -----------------------------------------------------------
 
 ✅ STEP 4: CODE REVIEW (BY YOU 😄)
@@ -203,80 +223,95 @@ Then:
 👉 Approve & merge to develop
 ------------------------------------------------------
 
-🚦 STEP 5: develop → main PR (RELEASE)
+## JIRA Workflow (SCRUM)
 
-Once stable features done:
-git checkout main
+Jira Setup
+  - Project Type: Scrum
+  - Space: E-Commerce NextJS Frontend Team
+  - Sprint: Sprint 0
+
+Story Created
+SCRUM-5 - Product browsing and product listing experience for users
+----------------------------------------
+
+Subtasks Created (SCRUM-9 → SCRUM-17)
+Examples:
+  - Project base setup
+  - Product listing UI
+  - Client-side search
+  - Category filter
+  - Pagination (future)
+  - Empty / loading states
+Each subtask:
+  - Linked to parent story (SCRUM-5)
+  - Own branch naming: feature/SCRUM-11-product-search
+-------------------------------------------------------------------------------------------- addeed ----
+
+## Development Workflow
+1) Pick Jira Subtask
+2) Create feature branch
+3) Code implementation
+3) Commit with Jira reference
+4) Push to GitHub
+5) Create Pull Request → develop
+6) CI runs
+7) PR merged after checks
+----------------------------------------------------------
+
+## Git Commands Used
+git init
+git status
+git add .
+git commit -m "message"
+git branch
+git checkout -b branch-name
+git checkout branch-name
+git push
+git push -u origin branch-name
 git pull
+git branch -d branch-name        # delete local branch
+git push origin --delete branch  # delete remote branch
+----------------------------------------------------------
 
-GitHub PR:
-  - Base: main
-  - Compare: develop
+## Deployment (Vercel)
+Steps
+1) Import GitHub repo into Vercel
+2) Select framework → Next.js
+3) Build command: npm run build
+4) Output directory → default
+5) Environment variables → .env (if required)
 
-PR Title: release: v1.1 product listing
--------------------------------------------------------
+Deployment Branch
+  - main → Production deploy
+  - develop → Preview deploy
+------------------------------------------------
 
-🚀 STEP 6: DEPLOYMENT (Production)
+## CI/CD Setup (GitHub Actions)
+  - CI runs on Pull Requests
+  - Checks include:
+        - Install dependencies
+        - Build Next.js app
+  - CI must pass before merge to main
+-------------------------------------------------
 
-Merge ke baad:
-  - GitHub Actions run
-  - Vercel auto deploy
-📌 Ye REAL production flow hai.
--------------------------------------------------------
+## Branch Protection Rules (main)
+Enabled:
+✅ Require Pull Request before merge
+✅ Require 1 approval
+✅ Require status checks to pass
+✅ Require branch to be up-to-date
+✅ Require conversation resolution
+✅ Block force push
+✅ Squash merge only
+--------------------------------------------------
 
-🔥 CI/CD REALISM (INTERVIEW GOLD)
 
-Tum confidently bol sakte ho:
-“Every merge to main triggers a CI pipeline with linting, build checks, and deployment.”
----------------------------------------------------------------------------------------
 
-📦 SCALING STRATEGY (200 → 2K → 20K users)
-| Phase     | Focus                   |
-| --------- | ----------------------- |
-| 200 users | SSG, caching            |
-| 2k users  | ISR, pagination         |
-| 20k users | CDN, image optimization |
---------------------------------------------------------------------------------------
-===============================================
-🏗️ SOLO DEVELOPER KE LIYE PERFECT JIRA SETUP
-==============================================
-🧱 STEP 1: JIRA ACCOUNT + PROJECT CREATE
 
-1️⃣ Atlassian JIRA open karo
 
-👉 https://www.atlassian.com/software/jira
-     - Sign up / Login
-     - Free plan hi enough hai (10 users tak)
 
---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
 
-## GitHub Actions CICD Pipeline Setup
 
-# Overall Flow 
-Feature branch -> PR -> develop -> auto buil/test -> preview deploy
-develop -> main -> auto production deploy
 
-# Branch based deployment
-| Branch    | Environment                   |
-| --------- | ----------------------------  |
-| feature/* | ❌ No deploy (sirf PR checks) |
-| develop   | ✅ Preview / Staging deploy   |
-| main      | ✅ Production deploy          |
 
-# Vercel Project Connect
-1️⃣ Vercel par jao
-👉 https://vercel.com
 
-2️⃣ New Project → Import GitHub Repo
-✔️ Select this Next.js repo
-✔️ Framework auto-detect: Next.js
-
-3️⃣ Branch Settings
-Production Branch → main
-Preview Branches → develop
-👉 Save
-
-⚠️ Ab:
-main push = LIVE
-develop push = preview URL

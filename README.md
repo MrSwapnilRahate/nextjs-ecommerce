@@ -245,7 +245,7 @@ Examples:
 Each subtask:
   - Linked to parent story (SCRUM-5)
   - Own branch naming: feature/SCRUM-11-product-search
------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------git
 
 ## Development Workflow
 1) Pick Jira Subtask

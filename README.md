@@ -238,7 +238,7 @@ Subtasks Created (SCRUM-9 → SCRUM-17)
 Examples:
   - Project base setup
   - Product listing UI
-  - Client-side search
+  - Client-side searchch
   - Category filter
   - Pagination (future)
   - Empty / loading states

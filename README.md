@@ -245,7 +245,7 @@ Examples:
 Each subtask:
   - Linked to parent story (SCRUM-5)
   - Own branch naming: feature/SCRUM-11-product-search
------------------------------------------------------------
+-------------------------------------------------------------------------------------------- addeed ----
 
 ## Development Workflow
 1) Pick Jira Subtask
@@ -315,75 +315,3 @@ Enabled:
 
 
 
-🚦 STEP 5: develop → main PR (RELEASE)
-
-Once stable features done:
-git checkout main
-git pull
-
-GitHub PR:
-  - Base: main
-  - Compare: develop
-
-PR Title: release: v1.1 product listing
--------------------------------------------------------
-
-🚀 STEP 6: DEPLOYMENT (Production)
-
-Merge ke baad:
-  - GitHub Actions run
-  - Vercel auto deploy
-📌 Ye REAL production flow hai.
--------------------------------------------------------
-
-🔥 CI/CD REALISM (INTERVIEW GOLD)
-
-Tum confidently bol sakte ho:
-“Every merge to main triggers a CI pipeline with linting, build checks, and deployment.”
----------------------------------------------------------------------------------------
-
-
---------------------------------------------------------------------------------------
-===============================================
-🏗️ SOLO DEVELOPER KE LIYE PERFECT JIRA SETUP
-==============================================
-🧱 STEP 1: JIRA ACCOUNT + PROJECT CREATE
-
-1️⃣ Atlassian JIRA open karo
-
-👉 https://www.atlassian.com/software/jira
-     - Sign up / Login
-     - Free plan hi enough hai (10 users tak)
-
---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-
-## GitHub Actions CICD Pipeline Setup
-
-# Overall Flow 
-Feature branch -> PR -> develop -> auto buil/test -> preview deploy
-develop -> main -> auto production deploy
-
-# Branch based deployment
-| Branch    | Environment                   |
-| --------- | ----------------------------  |
-| feature/* | ❌ No deploy (sirf PR checks) |
-| develop   | ✅ Preview / Staging deploy   |
-| main      | ✅ Production deploy          |
-
-# Vercel Project Connect
-1️⃣ Vercel par jao
-👉 https://vercel.com
-
-2️⃣ New Project → Import GitHub Repo
-✔️ Select this Next.js repo
-✔️ Framework auto-detect: Next.js
-
-3️⃣ Branch Settings
-Production Branch → main
-Preview Branches → develop
-👉 Save
-
-⚠️ Ab:
-main push = LIVE
-develop push = preview URL
